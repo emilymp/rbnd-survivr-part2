@@ -37,6 +37,6 @@ class Jury
     finalists.each do |finalist|
       winner = final_votes[finalist] > final_votes[winner] ? finalist : winner
     end
-    winner
+    puts "#{winner} wins!"
   end
 end
