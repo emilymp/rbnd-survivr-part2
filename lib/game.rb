@@ -23,10 +23,7 @@ class Game
 
   def merge(name)
     new_members = []
-    @tribes.each do |tribe| 
-      new_members += tribe.members
-    end
-
+    @tribes.each { |tribe| new_members += tribe.members }
     add_tribe(Tribe.new(name: name, members: new_members))
     @tribes.last
   end

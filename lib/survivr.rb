@@ -1,3 +1,5 @@
+require 'colorizr'
+
 require_relative "game"
 require_relative "tribe"
 require_relative "contestant"
@@ -10,8 +12,8 @@ require_relative "jury"
 @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
 #
 # # Create two new tribes with names
-@coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
-@hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
+@coyopa = Tribe.new(name: "Pagong".yellow, members: @contestants.shift(10))
+@hunapu = Tribe.new(name: "Tagi".yellow, members: @contestants.shift(10))
 #
 # # Create a new game of Survivor
 @borneo = Game.new(@coyopa, @hunapu)
@@ -45,7 +47,7 @@ end
 # If all the tests pass, the code below should run the entire simulation!!
 #=========================================================
 phase_one #8 eliminations
-@merge_tribe = @borneo.merge("Cello") # After 8 eliminations, merge the two tribes together
+@merge_tribe = @borneo.merge("Cello".yellow) # After 8 eliminations, merge the two tribes together
 phase_two #3 more eliminations
 @jury = Jury.new
 phase_three #7 elminiations become jury members

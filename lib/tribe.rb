@@ -4,7 +4,7 @@ class Tribe
   def initialize(op={})
     @name = op[:name]
     @members = op[:members]
-    puts "New Tribe #{@name}, may the odds be ever in your favor!"
+    puts "New Tribe ".green + "#{@name}" +  ", may the odds be ever in your favor!".green
   end
 
   def to_s
@@ -16,9 +16,4 @@ class Tribe
     members = @members.select { |member| member != immune }
     @members.delete(members.sample)
   end
-  
-  def print_members
-    @members.each {|member| puts "#{member}"}
-  end
-
 end
