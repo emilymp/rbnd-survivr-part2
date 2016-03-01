@@ -14,17 +14,18 @@ class Game
   end
 
   def clear_tribes
-    @tribes = []
+    @tribes.clear
   end
 
   def individual_immunity_challenge
-    @tribes.last.members.sample
+    @tribes.first.members.sample
   end
 
   def merge(name)
     new_members = []
     @tribes.each { |tribe| new_members += tribe.members }
+    @tribes.clear
     add_tribe(Tribe.new(name: name, members: new_members))
-    @tribes.last
+    @tribes.first
   end
 end

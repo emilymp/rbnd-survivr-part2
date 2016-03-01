@@ -29,5 +29,6 @@ class Jury
     finalists = final_votes.keys
     winner = final_votes[finalists[0]] > final_votes[finalists[1]] ? finalists[0] : finalists[1]
     puts "#{winner} wins!".yellow
+    winner
   end
 end
